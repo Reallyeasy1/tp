@@ -38,6 +38,7 @@ public class RemarkCommandParser implements Parser<RemarkCommand> {
      * @see seedu.address.logic.parser.ArgumentTokenizer
      */
     public RemarkCommand parse(String args) throws ParseException {
+        // Requires non-null args
         requireNonNull(args);
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_REMARK);
 
