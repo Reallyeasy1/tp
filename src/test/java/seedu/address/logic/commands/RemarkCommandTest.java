@@ -21,6 +21,7 @@ import seedu.address.model.person.Remark;
 
 /**
  * Contains integration tests (interaction with the Model) and unit tests for RemarkCommand.
+ * Tests Remarks.
  */
 public class RemarkCommandTest {
 
