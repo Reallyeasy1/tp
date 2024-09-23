@@ -31,7 +31,7 @@ class JsonAdaptedPerson {
     private final String address;
     private final String remark;
     private final List<JsonAdaptedTag> tags = new ArrayList<>();
-    private final Remark modelRemark = new Remark(""); //TODO: Implement parsing and marshalling in the storage commit.
+
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
