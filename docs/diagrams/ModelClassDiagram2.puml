@@ -16,12 +16,14 @@ Class UniqueStudentList
 Class Student
 Class StudentId
 Class Name
-Class TutorialClass
+abstract Class TutorialClass
+Class None_TutorialClass
+Class Exist_TutorialClass
 Class Assignment
 Class AssignmentList
 abstract Class Tutorial
-Class Exist
-Class None
+Class None_Tutorial
+Class Exist_Tutorial
 Class TutorialList
 
 Class TutDate
@@ -61,6 +63,8 @@ AssignmentList --> "~* all" Assignment
 TutorialList --> "~* all" Tutorial
 Tutorial *--> "~* all" TutDate
 Tutorial *--> TutName
-Tutorial <|-- Exist
-Tutorial <|-- None
+Tutorial <|-- Exist_Tutorial
+Tutorial <|-- None_Tutorial
+TutorialClass <|-- Exist_TutorialClass
+TutorialClass <|-- None_TutorialClass
 @enduml
