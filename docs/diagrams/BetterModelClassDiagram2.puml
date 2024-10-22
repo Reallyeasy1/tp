@@ -4,15 +4,27 @@ skinparam arrowThickness 1.1
 skinparam arrowColor MODEL_COLOR
 skinparam classBackgroundColor MODEL_COLOR
 
-AddressBook *-right-> "1" UniqueStudentList
-AddressBook *-right-> "1" AssignmentList
-AddressBook *-right-> "1" TutorialList
+' Position the AddressBook and related classes at the top
+AddressBook *-down-> "1" UniqueStudentList
+AddressBook *-down-> "1" AssignmentList
+AddressBook *-down-> "1" TutorialList
+
+' Position UniqueStudentList and related classes on the right
 UniqueStudentList "1" -right-> "*" Student
-Student "1" -up-> "1" Name
-Student "1" -up-> "1" StudentId
-Student "1" -up-> "1" TutorialClass
-AssignmentList "1" -- "*" Assignment
-TutorialList "1" -- "*" Tutorial
-Tutorial "1" -- "1" TutName
-Tutorial "1" -- "*" TutDate
+Student "1" -down-> "1" Name
+Student "1" -down-> "1" StudentId
+Student "1" -down-> "1" TutorialClass
+
+' AssignmentList and TutorialList on separate sides for clarity
+AssignmentList "1" --left-> "*" Assignment
+TutorialList "1" --right-> "*" Tutorial
+Tutorial "1" --right-> "1" TutName
+Tutorial "1" --right-> "*" TutDate
+
+' Specialization with vertical alignment
+TutorialClass <|--down-- Exist_TutorialClass
+TutorialClass <|--down-- None_TutorialClass
+Tutorial <|--down-- Exist_Tutorial
+Tutorial <|--down-- None_Tutorial
+
 @enduml
