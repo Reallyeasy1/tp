@@ -385,7 +385,7 @@ public abstract class Tutorial {
         }
         @Override
         public String toString() {
-            return tutName + ": Tutorial " + tutorialId;
+            return tutName + ": " + tutorialId;
         }
     }
 }
